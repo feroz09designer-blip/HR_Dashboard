@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Profile — ACI Application Form Admin Panel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <!-- =================== SIDEBAR =================== -->
+      <aside class="sidebar">
+        <div class="sidebar__logo">
+          <div class="sidebar__logo-circle">
+            <img
+              class="sidebar__logo-img"
+              src="https://i.ibb.co.com/2mg8FY0/aci-group-logo-png-seeklogo-342185.png"
+              alt="ACI"
+            />
+          </div>
+          <div class="sidebar__title">
+            <div class="sidebar__title-primary">ACI Application Form</div>
+            <div class="sidebar__title-secondary">Admin Panel</div>
+          </div>
+        </div>
+        <div class="sidebar__divider"></div>
+        <nav class="sidebar__nav">
+          <a class="sidebar__link" href="index.html">
+            <i data-lucide="file-bar-chart-2"></i>
+            <span>Employee Report</span>
+          </a>
+          <a class="sidebar__link is-active" href="employee-profile.html">
+            <i data-lucide="user-round"></i>
+            <span>Employee Profile</span>
+          </a>
+        </nav>
+        <div class="sidebar__footer">
+          <button
+            id="sidebarCollapse"
+            class="sidebar__collapse"
+            aria-label="Collapse sidebar"
+          >
+            <i data-lucide="chevron-left"></i>
+          </button>
+        </div>
+      </aside>
+
+      <div class="shell">
+        <!-- =================== TOPBAR =================== -->
+        <header class="topbar">
+          <div class="topbar__user" id="topbarUserSlot"></div>
+          <div class="topbar__actions">
+            <button class="btn btn--outline btn--icon" aria-label="Refresh">
+              <i data-lucide="refresh-ccw"></i>
+            </button>
+            <button class="btn btn--gradient">
+              <i data-lucide="log-out"></i>
+              Logout
+            </button>
+          </div>
+        </header>
+
+        <!-- =================== MAIN =================== -->
+        <main class="main">
+          <!-- Page header -->
+          <div class="page-head">
+            <div>
+              <nav class="breadcrumb" aria-label="Breadcrumb">
+                <i data-lucide="home"></i>
+                <i data-lucide="chevron-right" class="breadcrumb__sep"></i>
+                <span class="breadcrumb__crumb">Employees</span>
+                <i data-lucide="chevron-right" class="breadcrumb__sep"></i>
+                <span class="breadcrumb__crumb is-current">Employee details</span>
+              </nav>
+              <h1 class="page-head__title" style="margin-top: 6px;">
+                Employee details
+              </h1>
+            </div>
+
+            <!-- Search dropdown -->
+            <div class="search-dd" id="searchDd">
+              <button class="search-dd__trigger" id="searchDdTrigger">
+                <span id="searchDdLabel">Md. Salehin (21005)</span>
+                <i data-lucide="chevron-down"></i>
+              </button>
+              <div class="search-dd__panel is-hidden" id="searchDdPanel">
+                <div class="search-dd__search">
+                  <i data-lucide="search"></i>
+                  <input
+                    id="searchDdInput"
+                    type="text"
+                    placeholder="Search..."
+                  />
+                </div>
+                <div class="search-dd__list" id="searchDdList"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Two-column profile layout -->
+          <div class="profile-layout">
+            <aside class="profile-card" id="profileCard"></aside>
+
+            <div class="profile-content">
+              <div class="tabs">
+                <div class="tabs__strip custom-scroll" id="tabsStrip"></div>
+              </div>
+              <div id="tabContent"></div>
+            </div>
+          </div>
+        </main>
+
+        <footer class="footer">Copyright ©2026</footer>
+      </div>
+    </div>
+
+    <!-- Icons + scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>
